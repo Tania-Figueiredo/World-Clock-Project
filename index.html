@@ -3,47 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>Document</title>
+    <title>World Clock</title>
   </head>
-  <body>
-    <img src="img/logo.png" alt="logo FreshStart Dev" class="logo" />
 
-    <div class="container">
+  <body>
+    <header>
+      <img src="img/logo.png" alt="FreshStart Dev logo" class="logo" />
+    </header>
+
+    <main class="container">
       <h1>World Clock</h1>
 
-      <select id="city-select">
-        <option value="">Select a city</option>
-        <option value="Europe/Lisbon">Lisbon</option>
-        <option value="Europe/Madrid">Madrid</option>
-        <option value="Europe/Paris">Paris</option>
-        <option value="Europe/Rome">Rome</option>
-      </select>
-      <div class="city" id="lisbon">
-        <h2>Lisbon</h2>
-        <div class="date"></div>
-        <div class="time"></div>
-      </div>
-      <div class="city" id="madrid">
-        <h2>Madrid</h2>
-        <div class="date"></div>
-        <div class="time"></div>
+      <div class="select-wrapper">
+        <label for="city-select" class="visually-hidden">Choose a city</label>
+        <select id="city-select">
+          <option value="">Select a city</option>
+          <option value="Europe/Lisbon">Lisbon</option>
+          <option value="Europe/Madrid">Madrid</option>
+          <option value="Europe/Paris">Paris</option>
+          <option value="Europe/Rome">Rome</option>
+        </select>
       </div>
 
-      <div class="city" id="paris">
-        <h2>Paris</h2>
-        <div class="date"></div>
-        <div class="time"></div>
+      <div class="cities-grid">
+        <div class="city">
+          <h2>Lisbon</h2>
+          <div class="date" id="lisbon-date"></div>
+          <div class="time" id="lisbon-time"></div>
+        </div>
+
+        <div class="city">
+          <h2>Madrid</h2>
+          <div class="date" id="madrid-date"></div>
+          <div class="time" id="madrid-time"></div>
+        </div>
+
+        <div class="city">
+          <h2>Paris</h2>
+          <div class="date" id="paris-date"></div>
+          <div class="time" id="paris-time"></div>
+        </div>
+
+        <div class="city">
+          <h2>Rome</h2>
+          <div class="date" id="rome-date"></div>
+          <div class="time" id="rome-time"></div>
+        </div>
       </div>
-      <div class="city" id="rome">
-        <h2>Rome</h2>
-        <div class="date"></div>
-        <div class="time"></div>
-      </div>
-    </div>
-    <script src="src/index.js"></script>
+    </main>
 
     <footer>
       <p>
@@ -60,9 +74,11 @@
         <a
           href="https://plusaddonworldclockproject.netlify.app/"
           target="_blank"
-          >Netlify.</a
-        >
+          >Netlify</a
+        >.
       </p>
     </footer>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
