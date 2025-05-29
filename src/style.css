@@ -1,7 +1,7 @@
 body {
-  background-color: #fff7e6;
+  background-color: #ffcccb; /* Coral Suave */
   font-family: "Source Sans 3", sans-serif;
-  color: #2a2a2a;
+  color: #1a1a1a;
   margin: 0;
   padding: 0;
 }
@@ -15,12 +15,12 @@ body {
 }
 
 .container {
-  background-color: #c3e7cb;
+  background-color: #ffffff;
   max-width: 800px;
   margin: 100px auto 50px;
   padding: 50px 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(195, 231, 203, 0.8);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.15); /* sombra suave em vermelho cereja */
 }
 
 h1 {
@@ -29,6 +29,7 @@ h1 {
   margin-bottom: 40px;
   text-align: center;
   font-family: "Playfair Display", serif;
+  color: #d32f2f; /* Vermelho Cereja */
 }
 
 .select-wrapper {
@@ -41,18 +42,20 @@ h1 {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #d32f2f;
   background-color: #ffffff;
   font-family: "Source Sans 3", sans-serif;
   width: 60%;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
 }
+
 #city-select:hover,
 #city-select:focus {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+  border-color: #d32f2f;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.3);
   outline: none;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .cities-grid {
@@ -62,27 +65,30 @@ h1 {
 }
 
 .city {
-  background-color: #ffffff;
+  background-color: #fff4f4;
+  border-left: 6px solid #d32f2f; /* Destaque lateral */
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .city:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(211, 47, 47, 0.15);
 }
 
 .date {
   font-size: 16px;
   margin-bottom: 5px;
+  color: #1a1a1a;
 }
 
 .time {
   font-size: 20px;
   font-weight: bold;
+  color: #d32f2f;
 }
 
 footer {
@@ -90,10 +96,11 @@ footer {
   font-size: 14px;
   margin-bottom: 30px;
   padding: 10px 20px;
+  color: #1a1a1a;
 }
 
 a {
-  color: #ff6b6b;
+  color: #d32f2f;
   font-size: 14px;
   text-decoration: none;
   cursor: pointer;
@@ -101,7 +108,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #e55b5b;
+  color: #a52121; /* tom mais escuro do vermelho cereja */
 }
 
 .visually-hidden {
