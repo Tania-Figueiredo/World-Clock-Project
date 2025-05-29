@@ -9,7 +9,7 @@
     />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data-1970-2030.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data.min.js"></script>
     <title>World Clock</title>
   </head>
 
@@ -25,6 +25,7 @@
         <label for="city-select" class="visually-hidden">Choose a city</label>
         <select id="city-select">
           <option value="">Select a city</option>
+          <option value="current">My current location</option>
           <option value="America/New_York">New York</option>
           <option value="Asia/Tokyo">Tokyo</option>
           <option value="Australia/Sydney">Sydney</option>
@@ -32,30 +33,36 @@
         </select>
       </div>
 
-      <div class="cities-grid">
-        <div class="city">
+      <div class="cities-grid" id="cities-grid">
+        <div class="city" id="lisbon">
           <h2>Lisbon</h2>
           <div class="date" id="lisbon-date"></div>
           <div class="time" id="lisbon-time"></div>
         </div>
 
-        <div class="city">
+        <div class="city" id="madrid">
           <h2>Madrid</h2>
           <div class="date" id="madrid-date"></div>
           <div class="time" id="madrid-time"></div>
         </div>
 
-        <div class="city">
+        <div class="city" id="paris">
           <h2>Paris</h2>
           <div class="date" id="paris-date"></div>
           <div class="time" id="paris-time"></div>
         </div>
 
-        <div class="city">
+        <div class="city" id="rome">
           <h2>Rome</h2>
           <div class="date" id="rome-date"></div>
           <div class="time" id="rome-time"></div>
         </div>
+      </div>
+
+      <div id="single-city"></div>
+
+      <div id="back-button-wrapper" class="hidden">
+        <button id="back-button">⬅ Back to homepage</button>
       </div>
     </main>
 

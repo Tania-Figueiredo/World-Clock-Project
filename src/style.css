@@ -91,6 +91,35 @@ h1 {
   color: #d32f2f;
 }
 
+#single-city {
+  margin-top: 30px;
+}
+
+#back-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#back-button {
+  background-color: #d32f2f;
+  color: #ffffff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+  background-color: #a52121;
+}
+
+.hidden {
+  display: none;
+}
+
 footer {
   text-align: center;
   font-size: 14px;
