@@ -1,3 +1,4 @@
+// Atualiza a data e hora de uma cidade específica
 function updateTime(cityId, timeZone) {
   let dateElement = document.querySelector(`#${cityId}-date`);
   let timeElement = document.querySelector(`#${cityId}-time`);
@@ -9,6 +10,7 @@ function updateTime(cityId, timeZone) {
   }
 }
 
+// Atualiza as quatro cidades fixas
 function updateAllTimes() {
   updateTime("lisbon", "Europe/Lisbon");
   updateTime("madrid", "Europe/Madrid");
@@ -18,37 +20,44 @@ function updateAllTimes() {
 updateAllTimes();
 setInterval(updateAllTimes, 1000);
 
+// Variável para controlar o intervalo da cidade única
+let singleCityInterval = null;
+
+// Mostra apenas uma cidade com data/hora atualizadas
 function showSingleCity(timeZone, cityName) {
   const grid = document.querySelector("#cities-grid");
   const single = document.querySelector("#single-city");
   const back = document.querySelector("#back-button-wrapper");
 
+  // Oculta a grelha de cidades
   grid.style.display = "none";
   back.classList.remove("hidden");
 
-  let cityTime = moment().tz(timeZone);
-  single.innerHTML = `
-    <div class="city">
-      <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
-      <div class="time">${cityTime.format("HH:mm:ss")}</div>
-    </div>
-  `;
-
-  function updateSingle() {
-    cityTime = moment().tz(timeZone);
-    single.querySelector(".date").innerHTML = cityTime.format("MMMM Do YYYY");
-    single.querySelector(".time").innerHTML = cityTime.format("HH:mm:ss");
+  // Limpa qualquer intervalo anterior
+  if (singleCityInterval) {
+    clearInterval(singleCityInterval);
   }
 
-  setInterval(updateSingle, 1000);
+  function updateSingle() {
+    let cityTime = moment().tz(timeZone);
+    single.innerHTML = `
+      <div class="city">
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+        <div class="time">${cityTime.format("HH:mm:ss")}</div>
+      </div>
+    `;
+  }
+
+  updateSingle(); // mostra imediatamente
+  singleCityInterval = setInterval(updateSingle, 1000);
 }
 
+// Reage à seleção no <select>
 document
   .querySelector("#city-select")
   .addEventListener("change", function (event) {
     const timeZone = event.target.value;
-
     if (!timeZone) return;
 
     if (timeZone === "current") {
@@ -62,7 +71,13 @@ document
     }
   });
 
+// Botão para voltar à homepage
 document.querySelector("#back-button").addEventListener("click", function () {
+  if (singleCityInterval) {
+    clearInterval(singleCityInterval);
+    singleCityInterval = null;
+  }
+
   document.querySelector("#single-city").innerHTML = "";
   document.querySelector("#cities-grid").style.display = "grid";
   document.querySelector("#back-button-wrapper").classList.add("hidden");
