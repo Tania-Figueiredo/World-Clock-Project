@@ -30,4 +30,4 @@ This project displays the current date and time in multiple cities around the wo
 
 ## 👩‍💻 About the Author
 
-Made with ❤️ by Tânia Figueiredo(https://github.com/Tania-Figueiredo)during the **SheCodes Plus Add-On** course to reinforce JavaScript and DOM manipulation skills.
+Made with ❤️ by Tânia Figueiredo[(https://github.com/Tania-Figueiredo) ](https://github.com/Tania-Figueiredo)during the **SheCodes Plus Add-On** course to reinforce JavaScript and DOM manipulation skills.
